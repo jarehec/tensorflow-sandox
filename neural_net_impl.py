@@ -52,7 +52,7 @@ def train_neural_network(x):
                 _, c = sess.run([optimizer, loss], feed_dict={x:epoch_x, y:epoch_y})
                 epoch_loss += c
             # TODO print batch completion
-            print('Epoch', epoch + 1, 'completed out of', n_epochs, '.\nloss:', epoch_loss)
+            print('Epoch', epoch + 1, 'completed out of', n_epochs, '\nloss:', epoch_loss)
         # This will tell us how many predictions we made that were perfect matches to their labels.
         correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
         accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
